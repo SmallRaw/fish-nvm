@@ -4,9 +4,8 @@ function nvm
     return
   end
   set -q NVM_DIR; or set -gx NVM_DIR ~/.nvm
-  set -q nvm_prefix; or set -gx nvm_prefix $NVM_DIR
   
-  bass source $nvm_prefix/nvm.sh --no-use ';' nvm $argv
+  bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
 
   set bstatus $status
 
